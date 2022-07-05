@@ -1,0 +1,45 @@
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.products-grid__item-wrapper {
+  &:hover {
+    .products-grid__item-button {
+      bottom: 0;
+      z-index: 2;
+    }
+  }
+}
+
+.products-grid__item-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.products-grid__item-button {
+  width: 100%;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  transition: all .4s ease;
+  cursor: pointer;
+}
+
+.products-grid__item-category {
+  font-size: 22px;
+  color: $text-light;
+  text-transform: capitalize;
+}
+
+.products-grid__item-title {
+  font-size: 34px;
+  font-weight: bold;
+  color: $text-dark;
+}
+
+.products-grid__item-price {
+  font-size: 29px;
+  color: $text-light;
+}

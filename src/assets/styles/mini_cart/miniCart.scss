@@ -1,0 +1,33 @@
+.mini-cart {
+  position: absolute;
+  top: 152px;
+  right: 0;
+  width: 443px;
+  display: none;
+  z-index: 1;
+  border: 4px solid $border-light;
+  background-color: $color-white;
+  padding-top: 43px;
+
+  &.show {
+    display: block;
+  }
+}
+
+.mini-cart__inner {
+  position: relative;
+}
+
+.mini-cart__close-icon {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.mini-cart__footer {
+  padding: 24px;
+}

@@ -1,0 +1,12 @@
+.related-products__items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.related-products__title {
+  text-align: right;
+  margin-bottom: 27px;
+  font-size: 22px;
+  font-weight: bold;
+}

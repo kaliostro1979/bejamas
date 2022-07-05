@@ -1,0 +1,21 @@
+.header {
+  position: relative;
+}
+
+.header-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 57px 0 41px;
+  border-bottom: 4px solid $border-light;
+}
+
+.logo {
+  width: 159px;
+}
+
+.cart-icon__wrapper {
+  width: 54px;
+  height: 54px;
+}

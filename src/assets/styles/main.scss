@@ -1,0 +1,48 @@
+.image-wrapper {
+  position: relative;
+  width: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+.label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 21px 56px;
+  background-color: $color-white;
+}
+
+.button {
+  padding: 13px 39px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  font-size: 23px;
+  font-weight: 500;
+  text-align: center;
+
+  &.button-primary {
+    color: $color-white;
+    background-color: $color-black;
+  }
+
+  &.button-secondary {
+    color: $color-black;
+    background-color: $color-white;
+    border: 3px solid $color-black;
+    width: 100%;
+  }
+}

@@ -1,0 +1,20 @@
+.mini-cart__inner {
+  padding: 24px 24px 0 24px;
+}
+
+.mini-cart__item-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 2px solid $border-light;
+  padding-bottom: 24px;
+}
+
+.mini-cart__item-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mini-cart__item-price {
+  font-size: 29px;
+  color: $text-light;
+}

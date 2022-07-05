@@ -1,0 +1,14 @@
+.pagination-wrapper {
+  width: 100%;
+}
+
+.pagination-list {
+  display: flex;
+}
+
+.pagination-list__item {
+
+  &:not(&:last-child) {
+    margin-right: 15px;
+  }
+}

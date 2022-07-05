@@ -1,0 +1,19 @@
+@import "../variables";
+
+.text-block__title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.text-block__subtitle {
+  font-size: 22px;
+  font-weight: bold;
+  color: $text-light;
+  text-transform: capitalize;
+  margin: 9px 0;
+}
+
+.text-block__content {
+  max-width: 690px;
+  color: $text-light;
+}
