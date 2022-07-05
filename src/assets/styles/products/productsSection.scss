@@ -47,8 +47,20 @@
   transform: translateY(-50%);
 }
 
-@media (max-width: 690px) {
+.products-filters__icon {
+  display: none;
+}
+
+@media (max-width: 991px) {
   .products-section--left {
     display: none;
+  }
+
+  .products-sorting {
+    display: none;
+  }
+
+  .products-filters__icon {
+    display: block;
   }
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
     getFilteredByCategoryProducts,
     getFilteredByPriceProducts
@@ -6,11 +6,12 @@ import {
 import {useDispatch} from "react-redux";
 import {setSelectedFiltersAction} from "../../redux/actions/setSelectedFiltersAction";
 let selectedFilters = []
-function CategoriesItem({text, min, max}) {
+function CategoriesItem({text, min, max, name, idPostfix}) {
     const dispatch = useDispatch()
 
     const handleInputValue = (e) => {
         const selectedCategory = e.target.value
+
         if (e.target.name === 'category') {
             if (e.target.checked && !min && !max) {
                 selectedFilters.push(selectedCategory)
@@ -33,17 +34,16 @@ function CategoriesItem({text, min, max}) {
     return (
         <div className={'categories-list__item-wrapper'}>
             <input
-                type={min || max ? "radio" : "checkbox"}
-                name={min || max ? "price" : "category"}
-                id={text}
+                type={name === 'price' || name === 'price-mobile' ? "radio" : "checkbox"}
+                name={name}
+                id={text + '-' + idPostfix}
                 className={'categories-list__item-checkbox'}
                 value={text}
                 onChange={(e) => handleInputValue(e)}
                 min={min}
                 max={max}
-                /*disabled={value !== text && checkedItems.length >= 1}*/
             />
-            <label htmlFor={text} className={'categories-list__item-label'}>{text}</label>
+            <label htmlFor={text + '-' + idPostfix} className={'categories-list__item-label'}>{text}</label>
         </div>
     );
 }

@@ -1,0 +1,15 @@
+.breadcrumbs-item {
+  font-size: 18px;
+  font-weight: bold;
+  color: $text-dark;
+  margin-right: 2px;
+
+  a {
+    color: inherit;
+  }
+
+  &.current-item {
+    font-weight: 400;
+    color: $text-light;
+  }
+}

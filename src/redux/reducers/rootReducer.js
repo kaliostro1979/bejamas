@@ -8,6 +8,7 @@ import {miniCartStateCardReducer} from "./cartState";
 import {filteredProductsByCategoryReducer} from "./filteredProductsByCategory";
 import {selectedFiltersReducer} from "./selectedFilters";
 import {filteredProductsByPriceReducer} from "./filteredProductsByPrice";
+import {mobileFiltersStateReducer} from "./mobileFiltersState";
 
 
 
@@ -20,6 +21,7 @@ export const allReducers = combineReducers({
     cart_state: miniCartStateCardReducer,
     filtered_products_by_category: filteredProductsByCategoryReducer,
     filtered_products_by_price: filteredProductsByPriceReducer,
-    selected_filters: selectedFiltersReducer
+    selected_filters: selectedFiltersReducer,
+    mobile_filters_state: mobileFiltersStateReducer
 })
 

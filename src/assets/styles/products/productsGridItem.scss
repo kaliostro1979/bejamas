@@ -44,7 +44,7 @@
   color: $text-light;
 }
 
-@media (max-width: 690px) {
+@media (max-width: 991px) {
   .products-grid {
     grid-template-columns: 1fr;
     gap: 0;

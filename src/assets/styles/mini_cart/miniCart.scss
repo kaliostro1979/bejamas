@@ -31,3 +31,9 @@
 .mini-cart__footer {
   padding: 24px;
 }
+
+@media (max-width: 991px) {
+  .mini-cart {
+    width: 100%;
+  }
+}

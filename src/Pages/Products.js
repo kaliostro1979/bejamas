@@ -91,8 +91,8 @@ function Products() {
                     <ProductsGridHeader/>
                     <div className="products-section__inner">
                         <div className={'products-categories products-section--left'}>
-                            <CategoriesList items={categories} title={'Categories'}/>
-                            <CategoriesList items={priceRange} title={'Price'}/>
+                            <CategoriesList items={categories} title={'Categories'} name={'category'} idPostfix={'desktop'}/>
+                            <CategoriesList items={priceRange} title={'Price'} name={'price'} idPostfix={'desktop'}/>
                         </div>
                         <div className={'products-grid products-section--right'}>
 

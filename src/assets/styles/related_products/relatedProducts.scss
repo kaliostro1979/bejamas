@@ -10,3 +10,11 @@
   font-size: 22px;
   font-weight: bold;
 }
+
+@media (max-width: 991px) {
+  .related-products__item {
+    .image-wrapper {
+      padding-top: 122px !important;
+    }
+  }
+}

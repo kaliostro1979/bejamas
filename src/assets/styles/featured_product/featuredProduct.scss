@@ -48,7 +48,7 @@
   }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 991px) {
   .add-to-cart__button {
     &.add-to-cart__button-mobile {
       display: block;
@@ -62,6 +62,10 @@
 
   .featured-product__image {
     padding-top: 240px!important;
+  }
+
+  .featured-product__details-block {
+    font-size: 22px;
   }
 
   .featured-product__details {

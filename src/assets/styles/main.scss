@@ -46,3 +46,10 @@
     width: 100%;
   }
 }
+
+.main {
+  &.filters-show {
+    max-height: 100vh;
+    overflow: hidden;
+  }
+}

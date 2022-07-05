@@ -7,7 +7,7 @@ function RelatedProducts({products}) {
             <div className={'related-products__title'}>
                 <p>People also buy</p>
             </div>
-            <div className={'related-products__items'}>
+            <div className={' related-products__items'}>
                 {
                     products.length ? products.map((prod, i)=>{
                         return (

@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import CartIcon from "./Icons/CartIcon";
 import {openShoppingCardStatus} from "../redux/actions/manageCartState";
 import {useDispatch} from "react-redux";
+import FiltersMobile from "./FiltersMobile/FiltersMobile";
 
 function Header(props) {
     const dispatch = useDispatch()
@@ -23,6 +24,7 @@ function Header(props) {
                         <CartIcon/>
                     </div>
                     <MiniCart/>
+                    <FiltersMobile/>
                 </div>
             </div>
         </header>

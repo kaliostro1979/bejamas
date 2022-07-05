@@ -2,7 +2,7 @@ import React from 'react';
 import CategoriesItem from "./CategoriesItem";
 
 
-function CategoriesList({items, title}) {
+function CategoriesList({items, title, name, idPostfix}) {
 
     return (
         <div className={'categories-list_wrapper'}>
@@ -17,6 +17,8 @@ function CategoriesList({items, title}) {
                                     min={category.min}
                                     max={category.max}
                                     items={items}
+                                    name={name}
+                                    idPostfix={idPostfix}
                                 />
                             </li>
                         )

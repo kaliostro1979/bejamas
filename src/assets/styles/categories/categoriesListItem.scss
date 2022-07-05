@@ -11,7 +11,7 @@
       &:after {
         content: '';
         position: absolute;
-        top: -1px;
+        top: 0;
         left: 8px;
         width: 6px;
         height: 13px;
@@ -36,6 +36,7 @@
 .categories-list__item-label {
   position: relative;
   padding-left: 46px;
+  font-size: 22px;
 
   &:before {
     content: "";
@@ -46,5 +47,24 @@
     width: 23px;
     height: 23px;
     border: 1px solid $color-black;
+  }
+}
+
+@media (max-width: 991px) {
+  .categories-list__item-label {
+    font-size: 28px;
+  }
+
+  .categories-list__item-checkbox {
+    display: none;
+
+    &:checked {
+      & ~ .categories-list__item-label {
+
+        &:after {
+          top: 5px;
+        }
+      }
+    }
   }
 }

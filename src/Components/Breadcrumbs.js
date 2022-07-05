@@ -12,14 +12,14 @@ const Breadcrumbs = () => {
                 breadcrumbs.map(({match, breadcrumb}) => {
                     if (location.pathname !== match.pathname){
                         return (
-                            <span key={match.pathname}>
+                            <span key={match.pathname} className={'breadcrumbs-item'}>
                                 <NavLink to={match.pathname}>{breadcrumb}</NavLink>
-                                <span>/</span>
+                                <span> /</span>
                             </span>
                         )
                     }else {
                         return (
-                            <span key={match.pathname}>{breadcrumb}</span>
+                            <span className={'breadcrumbs-item current-item'} key={match.pathname}>{breadcrumb}</span>
                         )
                     }
                 })}
