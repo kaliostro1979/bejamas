@@ -43,3 +43,19 @@
   font-size: 29px;
   color: $text-light;
 }
+
+@media (max-width: 690px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .products-grid__item-wrapper {
+    margin-bottom: 32px;
+  }
+
+  .products-section--right {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}

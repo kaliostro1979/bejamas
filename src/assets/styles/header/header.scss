@@ -19,3 +19,13 @@
   width: 54px;
   height: 54px;
 }
+
+@media (max-width: 690px) {
+  .logo {
+    width: 124px;
+  }
+
+  .cart-icon__wrapper {
+    width: 30px;
+  }
+}

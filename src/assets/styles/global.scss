@@ -38,8 +38,19 @@ ul {
 .container {
   max-width: 1290px;
   margin: 0 auto;
+  padding: 0 40px;
+}
+
+img {
+  width: 100%;
 }
 
 svg {
   width: 100%;
+}
+
+@media (max-width: 680px) {
+  .container {
+    padding: 0 20px;
+  }
 }

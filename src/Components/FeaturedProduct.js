@@ -7,11 +7,11 @@ import {useDispatch} from "react-redux";
 import {addToCart} from "../redux/actions/addToCart";
 import {openShoppingCardStatus} from "../redux/actions/manageCartState";
 
-function FeaturedProduct({featured}) {
+function FeaturedProduct({featured, id}) {
     const dispatch = useDispatch()
 
     const handleAddToCart = ()=>{
-        dispatch(addToCart(featured))
+        dispatch(addToCart(featured, id))
         dispatch(openShoppingCardStatus())
     }
 
@@ -20,9 +20,17 @@ function FeaturedProduct({featured}) {
         <div className={'featured-product__wrapper'}>
             <div className={'featured-product__header'}>
                 <h1 className={'featured-product__title'}>{featured.name}</h1>
-                <Button text={'Add to cart'} additionalClass={'button-primary'} callBack={handleAddToCart}/>
+                <Button text={'Add to cart'} additionalClass={'button-primary add-to-cart__button add-to-cart__button-desktop'} callBack={handleAddToCart}/>
             </div>
-            <Image src={featured.image.src} alt={featured.image.alt ? featured.image.alt : ""} paddingTop={'550px'} label={featured.label.status} labelText={featured.label.text}/>
+            <Image
+                src={featured.image.src}
+                alt={featured.image.alt ? featured.image.alt : ""}
+                paddingTop={'550px'}
+                label={featured.label.status}
+                labelText={featured.label.text}
+                additionalClass={'featured-product__image'}
+            />
+            <Button text={'Add to cart'} additionalClass={'button-primary add-to-cart__button add-to-cart__button-mobile'} callBack={handleAddToCart}/>
             <div className={'featured-product__details'}>
                 <div className={'featured-product__details-item featured-product__details-item--left'}>
                     <TextWithTitle text={featured.details.description} title={featured.name} category={featured.category}/>

@@ -6,11 +6,11 @@ import {addToCart} from "../../redux/actions/addToCart";
 import {openShoppingCardStatus} from "../../redux/actions/manageCartState";
 import {useDispatch} from "react-redux";
 
-function ProductsGridItem({product}) {
+function ProductsGridItem({product, id}) {
     const dispatch = useDispatch()
 
     const handleAddToCart = () => {
-        dispatch(addToCart(product))
+        dispatch(addToCart(product, id))
         dispatch(openShoppingCardStatus())
     }
 

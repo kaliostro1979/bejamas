@@ -16,7 +16,6 @@ function Products() {
     const filtered_products_by_category = useSelector(state => state.filtered_products_by_category)
     const filtered_products_by_price = useSelector(state => state.filtered_products_by_price)
     let filteredProductsArray = []
-
     const priceRange = [
         {
             name: "Lower than $20",
@@ -52,7 +51,7 @@ function Products() {
         const arr = [];
         for (const price of prices) {
             for (const category of categories) {
-                if (price.category === category.category && price.price === category.price) {
+                if (price.item.category === category.item.category && price.item.price === category.item.price) {
                     arr.push(price);
                 }
             }
@@ -86,7 +85,7 @@ function Products() {
         <main className={'products'}>
             <div className={'container'}>
                 {
-                    Object.keys(featured).length ? <FeaturedProduct featured={featured}/> : ""
+                    Object.keys(featured).length ? <FeaturedProduct featured={featured.item} id={featured.id}/> : ""
                 }
                 <section className={'products-section'}>
                     <ProductsGridHeader/>
@@ -99,19 +98,19 @@ function Products() {
 
                             {
                                 notFiltered ? products.map((product, i) => {
-                                    if (!product.featured) {
+                                    if (!product.item.featured) {
                                         return (
-                                            <div className={'products-grid__item-wrapper'} key={product.slug}>
-                                                <ProductsGridItem product={product}/>
+                                            <div className={'products-grid__item-wrapper'} key={product.id}>
+                                                <ProductsGridItem product={product.item} id={product.id}/>
                                             </div>
                                         )
                                     }
                                     return null
                                 }) : filterResult ? filteredProductsArray.map((product, i) => {
-                                    if (!product.featured) {
+                                    if (!product.item.featured) {
                                         return (
-                                            <div className={'products-grid__item-wrapper'} key={product.slug}>
-                                                <ProductsGridItem product={product}/>
+                                            <div className={'products-grid__item-wrapper'} key={product.id}>
+                                                <ProductsGridItem product={product.item} id={product.id}/>
                                             </div>
                                         )
                                     }

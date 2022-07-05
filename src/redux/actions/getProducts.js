@@ -11,7 +11,13 @@ export const getProducts = (data) => {
     return async function (dispatch) {
         const first = query(collection(db, collectionName), orderBy(params[0], params[1]));
         const documentSnapshots = await getDocs(first);
-        let productList = documentSnapshots.docs.map(doc => doc.data())
+        let productList = documentSnapshots.docs.map(doc => {
+            return {
+                id: doc.id,
+                item: doc.data()
+            }
+        })
+
         dispatch(getProductsAction(productList))
     }
 }

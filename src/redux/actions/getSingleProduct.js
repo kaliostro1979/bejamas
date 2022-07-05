@@ -6,7 +6,7 @@ export const getSingleProduct = (id)=>{
     return async function (dispatch){
         const docRef = doc(db, 'products', id)
         const product = await getDoc(docRef).then((doc)=>doc.data())
-
+        console.log(product);
         dispatch(getSingleProductAction(product))
     }
 }

@@ -14,7 +14,10 @@ export const getFilteredByCategoryProducts = (categories) => {
             );
             const querySnapshot = await getDocs(q1);
             const filteredProducts = querySnapshot.docs.map(doc => {
-                return doc.data()
+                return {
+                    id: doc.id,
+                    item: doc.data()
+                }
             })
 
             dispatch(getFilteredByCategoryProductsAction(filteredProducts))
@@ -43,7 +46,10 @@ export const getFilteredByPriceProducts = (min, max) => {
 
         const querySnapshot = await getDocs(q2);
         const filteredProducts = querySnapshot.docs.map(doc => {
-            return doc.data()
+            return {
+                id: doc.id,
+                item: doc.data()
+            }
         })
 
         dispatch(getFilteredByPriceProductsAction(filteredProducts))

@@ -10,7 +10,10 @@ export const getFeaturedProduct = ()=>{
         const q = query(collection(db, "products"), where("featured", "==", true));
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
-            featured = doc.data()
+            featured = {
+                id: doc.id,
+                item: doc.data()
+            }
         });
 
         dispatch(getFeaturedProductAction(featured))

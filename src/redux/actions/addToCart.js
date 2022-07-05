@@ -3,22 +3,23 @@ import {getMiniCartProducts} from "./getMiniCartProducts";
 
 
 
-export const addToCart = (product)=>{
+export const addToCart = (product, id)=>{
     let cardItems = []
     return function (dispatch){
         const cardItemsFromLocal = JSON.parse(localStorage.getItem('cardItems'))
 
         if (!cardItemsFromLocal || !cardItemsFromLocal.length){
-            cardItems.push(product)
+            cardItems.push({...product, id:id})
             localStorage.setItem('cardItems', JSON.stringify(cardItems))
         }else {
-            cardItemsFromLocal.forEach(item=>{
-                if (item.slug !== product.slug){
-                    cardItemsFromLocal.push(product)
-                }
-            })
+            var isInArray = cardItemsFromLocal.find(function(el){ return el.id === id }) !== undefined;
+            if (!isInArray){
+                cardItemsFromLocal.push({...product, id:id})
+            }
+
             localStorage.setItem('cardItems', JSON.stringify(cardItemsFromLocal))
         }
+
         dispatch(addToCartAction())
         dispatch(getMiniCartProducts())
     }
